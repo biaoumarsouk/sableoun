@@ -1,0 +1,19 @@
+/* Fichier: ~/ecommerce/frontend/src/pages/dashboard/MessageListPage.css (Mise à jour) */
+
+.message-table tbody tr {
+  cursor: pointer;
+}
+
+.message-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* On met le texte en gras pour les messages non lus */
+.message-table tbody tr.message-unread {
+  font-weight: bold;
+}
+
+/* On peut adoucir la couleur du texte pour les messages lus */
+.message-table tbody tr:not(.message-unread) {
+  color: #6c757d; /* Couleur text-muted de Bootstrap */
+}

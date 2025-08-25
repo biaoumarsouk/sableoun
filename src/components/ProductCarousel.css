@@ -1,0 +1,84 @@
+/* =================================================================== */
+/* Fichier: ~/ecommerce/frontend/src/components/ProductCarousel.css    */
+/* =================================================================== */
+
+/* --- 1. Le conteneur parent --- */
+.product-carousel-container {
+  position: relative; /* Devient le point de référence pour les dégradés */
+}
+
+/* --- 2. Le wrapper interne pour le scroll --- */
+.product-carousel-wrapper {
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+}
+
+/* --- 3. Les dégradés sont maintenant positionnés par rapport au PARENT --- */
+.product-carousel-container::before,
+.product-carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+.product-carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+.product-carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+@media (pointer: coarse) {
+  .product-carousel-container::before,
+  .product-carousel-container::after {
+    display: none;
+  }
+}
+
+/* --- (Le style de la scrollbar et des colonnes ne change pas) --- */
+.product-carousel-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #0d6efd #e9ecef;
+}
+.product-carousel-wrapper::-webkit-scrollbar { height: 8px; }
+.product-carousel-wrapper::-webkit-scrollbar-track { background: #e9ecef; border-radius: 4px; }
+.product-carousel-wrapper::-webkit-scrollbar-thumb { background-color: #0d6efd; border-radius: 4px; }
+
+.view-more-card {
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  transition: all 0.3s ease-in-out;
+  
+  /* --- CORRECTION POUR LE CENTRAGE VERTICAL --- */
+  /* On s'assure que la carte elle-même est un conteneur flex */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-more-card .card-body {
+    /* On dit au corps de la carte de ne pas essayer de s'étirer */
+    flex: none;
+}
+/* --- FIN DE LA CORRECTION --- */
+
+
+/* Effet de survol */
+.view-more-card:hover {
+  border-color: var(--bs-primary);
+  background-color: #eef5ff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.view-more-card .card-title {
+  transition: color 0.3s ease;
+}
+
+.view-more-card:hover .card-title {
+  color: var(--bs-primary);
+}

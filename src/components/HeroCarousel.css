@@ -1,0 +1,64 @@
+/* =================================================================== */
+/* Fichier : ~/ecommerce/frontend/src/components/HeroCarousel.css (Final) */
+/* =================================================================== */
+
+/* --- Style de base pour l'image (Mobile First) --- */
+.hero-carousel-container .carousel-item img {
+  height: 250px; /* Hauteur réduite pour les mobiles */
+  object-fit: cover;
+  filter: brightness(50%); /* On assombrit bien pour le contraste */
+}
+
+/* --- Style de base pour la légende (Mobile First) --- */
+.carousel-caption-custom {
+  /* On ajuste la position pour qu'elle ne soit pas trop basse */
+  bottom: 1.25rem;
+  left: 10%;
+  right: 10%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.carousel-caption-custom h3 {
+  font-size: 1.2rem; /* Police plus petite pour le titre sur mobile */
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-caption-custom p {
+  font-size: 0.8rem; /* Police beaucoup plus petite pour la description sur mobile */
+  margin-top: 0.5rem; /* Espace réduit entre titre et description */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+
+/* --- Styles pour les écrans de taille tablette (à partir de 576px) --- */
+@media (min-width: 576px) {
+  .hero-carousel-container .carousel-item img {
+    height: 400px; /* On augmente la hauteur */
+  }
+
+  .carousel-caption-custom h3 {
+    font-size: 2rem; /* On agrandit la police du titre */
+  }
+
+  .carousel-caption-custom p {
+    font-size: 1rem; /* On agrandit la police de la description */
+  }
+}
+
+
+/* --- Styles pour les écrans d'ordinateur (à partir de 992px) --- */
+@media (min-width: 992px) {
+  .hero-carousel-container .carousel-item img {
+    height: 500px; /* Hauteur maximale pour les grands écrans */
+  }
+
+  .carousel-caption-custom h3 {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-caption-custom p {
+    font-size: 1.25rem;
+  }
+}

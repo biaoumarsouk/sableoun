@@ -1,0 +1,85 @@
+/* =================================================================== */
+/* Fichier : ~/ecommerce/frontend/src/index.css (Final + Typo Fluide) */
+/* =================================================================== */
+
+/* --- 1. RESET CSS UNIVERSEL --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- 2. RÈGLE DE HAUTEUR CRUCIALE --- */
+html, body, #root {
+  height: 100%;
+}
+
+/* --- 3. LA MAGIE DE LA TYPOGRAPHIE FLUIDE --- */
+/* On définit la taille de police de base sur l'élément racine <html> */
+html {
+  /*
+   * clamp(MIN, VALEUR_IDÉALE, MAX)
+   * MIN: La taille de police ne descendra JAMAIS en dessous de 14px.
+   * VALEUR_IDÉALE: 1vw + 0.75rem. C'est une formule qui s'adapte à la largeur de la fenêtre (vw).
+   * MAX: La taille de police ne dépassera JAMAIS 16px.
+  */
+  font-size: clamp(14px, 1vw + 0.75rem, 16px);
+}
+
+/* --- 4. STYLES GLOBAUX DU BODY --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6; /* Améliore la lisibilité */
+}
+
+/* --- 5. STYLES FLUIDES POUR LES TITRES (optionnel mais recommandé) --- */
+/* On peut utiliser la même technique pour rendre les titres responsives */
+h1, .h1 { font-size: clamp(2rem, 5vw + 1rem, 3.5rem); }
+h2, .h2 { font-size: clamp(1.75rem, 4vw + 1rem, 3rem); }
+h3, .h3 { font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); }
+/* etc. pour h4, h5, h6... */
+
+
+/* --- 6. ANIMATION GLOBALE POUR LES TOASTS --- */
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* =================================================================== */
+/* Fichier : ~/ecommerce/frontend/src/index.css                      */
+/* =================================================================== */
+
+/* ... (votre CSS existant pour html, body, toast-progress) ... */
+
+/* --- STYLE PERSONNALISÉ POUR LA BARRE DE RECHERCHE --- */
+
+/* Le conteneur InputGroup */
+.custom-search-group {
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #ced4da; /* Bordure par défaut */
+  border-radius: 0.5rem; /* Coins arrondis pour tout le groupe */
+  overflow: hidden; /* Pour que les enfants respectent les coins arrondis */
+}
+
+/* Quand on clique sur un élément à l'intérieur, on applique le style au PARENT */
+.custom-search-group:focus-within {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* On enlève les styles par défaut des enfants pour ne pas avoir de conflits */
+.custom-search-group .form-control,
+.custom-search-group .input-group-text {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

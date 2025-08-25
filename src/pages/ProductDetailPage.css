@@ -1,0 +1,52 @@
+/* Fichier: ~/ecommerce/frontend/src/pages/ProductDetailPage.css */
+
+.product-image-container {
+  width: 100%;
+  padding-top: 75%; /* Ratio d'aspect 4:3 (hauteur = 75% de la largeur) */
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image remplit l'espace sans se déformer */
+}
+
+/* --- STYLE POUR LA CARTE VENDEUR --- */
+.seller-info-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.seller-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) !important;
+  border-color: var(--bs-primary) !important;
+}
+.seller-info-card .arrow-icon {
+  transition: transform 0.3s ease;
+}
+.seller-info-card:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* --- ANIMATIONS POUR L'APPARITION DE LA PAGE --- */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

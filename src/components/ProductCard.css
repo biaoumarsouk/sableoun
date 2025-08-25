@@ -1,0 +1,130 @@
+/* =================================================================== */
+/* Fichier : ~/ecommerce/frontend/src/components/ProductCard.css (Convivial) */
+/* =================================================================== */
+
+.product-card {
+  border: 1px solid #e9ecef;
+  border-radius: 1rem !important;
+  transition: all 0.3s ease-in-out;
+  overflow: visible; /* Permet aux ombres de bien s'afficher */
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* --- Le lien de l'image --- */
+.product-image-link {
+  display: block;
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative; /* Pour le badge */
+}
+
+.product-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+
+/* --- Le titre cliquable --- */
+.card-title {
+  font-weight: 600;
+  color: #212529;
+}
+.stretched-link-custom {
+  /* Assure que le lien prend toute la place du titre */
+  position: relative;
+}
+.stretched-link-custom:hover {
+  color: var(--bs-primary) !important;
+}
+
+.price {
+  color: var(--bs-primary);
+}
+
+/* --- Le "faux" bouton œil --- */
+.btn-view-product {
+  background-color: #e9ecef;
+  color: #6c757d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.product-card:hover .btn-view-product {
+  background-color: var(--bs-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* --- Le badge de catégorie sur l'image --- */
+.product-seller-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  padding: 0.4em 0.8em;
+  border: 2px solid white;
+  z-index: 2;
+}
+
+/* On supprime le footer qui n'est plus utilisé */
+.product-card .card-footer {
+  display: none;
+}
+
+/* --- STYLE POUR LE RUBAN DU VENDEUR --- */
+
+.company-ribbon-link {
+  position: absolute;
+  top: 12px;
+  left: -2px; /* Pour que le petit triangle dépasse légèrement */
+  z-index: 1;
+  text-decoration: none;
+}
+
+.company-ribbon {
+  background-color: rgba(0, 123, 255, 0.9); /* Bleu primaire de Bootstrap, avec transparence */
+  backdrop-filter: blur(4px); /* Effet de flou derrière */
+  color: white;
+  padding: 5px 12px 5px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease;
+  max-width: 150px; /* Empêche les noms trop longs de déborder */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute "..." si le nom est trop long */
+}
+
+/* Petit triangle sur le côté pour l'effet "ruban" */
+.company-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 8px 8px; /* Crée un triangle vers le bas à gauche */
+  border-color: transparent transparent #004a99 transparent; /* Couleur plus foncée pour l'ombre */
+}
+
+.company-ribbon-link:hover .company-ribbon {
+  background-color: rgba(0, 91, 187, 0.95); /* Bleu plus foncé au survol */
+}

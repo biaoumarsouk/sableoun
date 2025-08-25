@@ -1,0 +1,48 @@
+/* Fichier: ~/ecommerce/frontend/src/components/UserDropdown.css */
+
+.user-dropdown .dropdown-menu {
+  width: 300px;
+  border-radius: 1rem !important;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1) !important;
+  padding: 0;
+  margin-top: 0.5rem !important;
+}
+
+.user-dropdown-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.user-dropdown-avatar {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+}
+
+.user-dropdown-name {
+  font-weight: 600;
+  color: #212529;
+}
+
+.user-dropdown-email {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.user-dropdown .dropdown-item {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+.user-dropdown-footer {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.user-dropdown .dropdown-toggle::after {
+  display: none !important;
+}

@@ -1,0 +1,39 @@
+/* Fichier : ~/ecommerce/frontend/src/components/Footer.css */
+
+.footer-container {
+  background-color: #212529 !important; /* Un noir/gris très foncé */
+}
+
+.footer-container h5, .footer-container h6 {
+  color: #ffffff;
+}
+.footer-container h6::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--bs-primary);
+  margin-top: 0.5rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  padding-left: 5px; /* Petit décalage au survol */
+}
+
+.social-icons a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--bs-primary);
+  transform: translateY(-3px);
+}
+

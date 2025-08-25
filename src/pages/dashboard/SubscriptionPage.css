@@ -1,0 +1,19 @@
+/* Fichier: ~/ecommerce/frontend/src/pages/dashboard/SubscriptionPage.css */
+
+.subscription-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 1rem !important;
+}
+
+.subscription-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
+}
+
+.subscription-card.featured {
+    transform: scale(1.05); /* Met la carte en avant légèrement */
+}
+
+.subscription-card.featured:hover {
+    transform: scale(1.05) translateY(-8px); /* Conserve l'agrandissement au survol */
+}

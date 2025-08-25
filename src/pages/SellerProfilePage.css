@@ -1,0 +1,12 @@
+/* Fichier: ~/ecommerce/frontend/src/pages/SellerProfilePage.css */
+
+.seller-hero {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  padding: 4rem 0;
+}
+
+.seller-hero img.profile-image {
+  border: 4px solid white;
+}
+

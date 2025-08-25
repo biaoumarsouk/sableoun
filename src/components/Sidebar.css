@@ -1,0 +1,53 @@
+/* =================================================================== */
+/* Fichier: ~/ecommerce/frontend/src/components/Sidebar.css (Final)  */
+/* =================================================================== */
+
+.sidebar {
+  /* Positionnement fixe sur le côté gauche */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Prend 100% de la hauteur de la FENÊTRE */
+  z-index: 1030;
+
+  /* Apparence */
+  width: 260px;
+  background-color: #fff;
+  border-right: 1px solid #dee2e6;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+  
+  /* Comportement interne */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-content {
+  overflow-y: auto;
+}
+.sidebar-logout {
+  margin-top: auto;
+}
+
+/* --- Comportement sur petit écran --- */
+@media (max-width: 991.98px) {
+  .sidebar {
+    /* Par défaut, elle est cachée en dehors de l'écran */
+    transform: translateX(-100%);
+  }
+  .sidebar.is-open {
+    /* Quand elle est ouverte, elle revient à sa position */
+    transform: translateX(0);
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1020;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.sidebar-overlay.is-open { opacity: 1; visibility: visible; }
