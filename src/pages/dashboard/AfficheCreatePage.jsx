@@ -8,6 +8,7 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import apiClient from '../../api/axiosConfig';
 
 export default function AfficheCreatePage() {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ export default function AfficheCreatePage() {
 
     const toastId = toast.loading("Création de l'affiche en cours...");
     try {
-      await axios.post('http://127.0.0.1:8000/api/affiches', data, {
+      await apiClient.post('/affiches', data, {
         headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` },
       });
       toast.success("Affiche créée avec succès !", { id: toastId });

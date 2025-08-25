@@ -8,6 +8,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { ArrowLeft } from 'react-bootstrap-icons';
 import apiClient from '../../api/axiosConfig';
+import { getImageUrl } from '../../utils/urlHelpers';
+
 
 // Helper pour formater la date pour le champ input type="date"
 const formatDateForInput = (dateString) => {
@@ -52,7 +54,7 @@ export default function AfficheEditPage() {
                 setIsPublished(data.status === 'published');
 
                 if (data.image_path) {
-                    setImagePreview(`http://127.0.0.1:8000/storage/${data.image_path}`);
+                    setImagePreview(getImageUrl(data.image_path));
                 }
             } catch (err) {
                 setInitialError("Impossible de charger les données de l'affiche.");
