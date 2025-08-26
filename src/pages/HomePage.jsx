@@ -60,7 +60,7 @@ export default function HomePage() {
     ];
 
     return (
-      <div className="py-2">
+      <div className="py-5">
         <div className="text-center mb-5">
           <h2 className="fw-bold">{title}</h2>
           <p className="lead text-muted">{description}</p>
@@ -90,7 +90,7 @@ export default function HomePage() {
           <>
             {/* --- Section des Affiches (mise en avant) --- */}
             {affiches.length > 0 && (
-              <div className="py-2">
+              <div className="py-5">
                 <div className="text-center mb-5">
                   <h2 className="fw-bold">Annonces & Événements</h2>
                   <p className="lead text-muted">Les dernières nouvelles de nos vendeurs.</p>
@@ -118,7 +118,7 @@ export default function HomePage() {
       </Container>
       
       {!loading && (
-        <div className="bg-light">
+        <div className="bg-light mb-5">
           <Container className="text-center">
             <h3 className="fw-bold">Vous avez un talent, un produit ou un savoir-faire à partager ?</h3>
             <p className="lead text-muted my-3">
