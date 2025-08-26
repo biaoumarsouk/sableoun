@@ -118,7 +118,7 @@ export default function HomePage() {
       </Container>
       
       {!loading && (
-        <div className="bg-light py-5 ">
+        <div className="bg-light mb-2">
           <Container className="text-center">
             <h3 className="fw-bold">Vous avez un talent, un produit ou un savoir-faire à partager ?</h3>
             <p className="lead text-muted my-3">
