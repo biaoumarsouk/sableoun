@@ -3,10 +3,10 @@
 /* =================================================================== */
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Container, Row, Col, Image, Spinner, Alert, Badge } from 'react-bootstrap';
+import { useParams, Link } from 'react-router-dom';
+import { Container, Row, Col, Image, Spinner, Alert, Badge, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { TelephoneFill, PersonCircle, GeoAltFill, Envelope } from 'react-bootstrap-icons'; // <-- AJOUTER GeoAltFill
+import { TelephoneFill, PersonCircle, GeoAltFill, Envelope, Shop } from 'react-bootstrap-icons'; // <-- AJOUTER GeoAltFill
 import ProductCarousel from '../components/ProductCarousel';
 import AfficheCarousel from '../components/AfficheCarousel';
 
@@ -94,6 +94,10 @@ export default function SellerProfilePage() {
                   {seller.city}, {seller.region}, {seller.country}
                 </p>
               )}
+              <Button as={Link} to={`/boutique/${seller.slug}`} size="lg" className="mt-4">
+                <Shop className="me-2" />
+                Commander chez ce vendeur
+              </Button>
             </Col>
           </Row>
         </Container>

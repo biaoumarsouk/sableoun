@@ -1,0 +1,56 @@
+/* Fichier: ~/ecommerce/frontend/src/pages/StorePage.css */
+
+.product-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  /* --- CORRECTION 2 : On cache ce qui dépasse de la carte --- */
+  overflow: hidden; 
+  border-radius: var(--bs-card-border-radius); /* Assure que le radius est appliqué partout */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-card-img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* On ajoute une transition pour un effet de zoom fluide */
+  transition: transform 0.3s ease-in-out; 
+}
+
+/* On ajoute l'effet de zoom au survol de la carte */
+.product-card:hover .product-card-img {
+  transform: scale(1.05);
+}
+
+
+/* Bouton de panier flottant (FAB - Floating Action Button) */
+.cart-fab {
+  position: fixed;
+  top: 8%;
+  right: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  transition: transform 0.2s ease-in-out;
+  background-color: #0d6efd; /* Fond bleu primaire de Bootstrap */
+  color: white; /* Icône blanche */
+}
+
+.cart-fab:hover {
+  transform: scale(1.1);
+}
+
+.cart-fab-badge {
+  position: absolute;
+  /* --- CORRECTION 1 : On positionne le badge en haut à droite --- */
+  top: -5px;   /* Le fait remonter */
+  right: -5px; /* Le décale vers la droite */
+  /* On peut enlever 'transform' si cette position convient, ou l'utiliser pour un ajustement plus fin */
+}

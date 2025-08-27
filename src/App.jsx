@@ -17,6 +17,7 @@ import AfficheDetailPage from './pages/AfficheDetailPage'; // <-- Importer
 import SellerListPage from './pages/SellerListPage'; // <-- Importer
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
+import StorePage from './pages/StorePage';
 
 // --- Pages et Layout de l'Espace Vendeur ---
 import DashboardLayout from './pages/dashboard/DashboardLayout';
@@ -98,6 +99,7 @@ function MainContent() {
           <Route path="/affiches/:id" element={<AfficheDetailPage />} /> {/* <-- NOUVELLE ROUTE */}
           <Route path="/mot-de-passe-oublie" element={<ForgotPasswordPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/boutique/:slug" element={<StorePage />} />
 
           {/* --- Routes Protégées de l'Espace Vendeur --- */}
           <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>

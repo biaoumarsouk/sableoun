@@ -72,7 +72,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroCarousel />
+      <HeroCarousel className="mb-5"/>
 
       {/* On utilise un seul Container principal pour le contenu */}
       <Container fluid>
