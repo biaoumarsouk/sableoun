@@ -184,7 +184,7 @@ export default function Register() {
             </Row>
             <Form.Group className="mb-3"><Form.Label>Ville</Form.Label><Form.Select name="city" value={formData.city} onChange={handleChange} disabled={!formData.stateCode || cities.length === 0} isInvalid={!!errors.city}><option value="">Choisissez...</option>{cities.map(city => <option key={city.name} value={city.name}>{city.name}</option>)}</Form.Select></Form.Group>
 
-            <div className="form-separator"><span>Informations de contact & Sécurité</span></div>
+            <div className="form-separator"><span>Informations de Sécurité</span></div>
             <Form.Group className="mb-3"><Form.Label>Adresse e-mail *</Form.Label><Form.Control type="email" name="email" onChange={handleChange} isInvalid={!!errors.email} required /></Form.Group>
             <Form.Group className="mb-3"><Form.Label>Numéro de téléphone *</Form.Label><InputGroup><InputGroup.Text>{formData.phone_indicator || '+XXX'}</InputGroup.Text><Form.Control type="tel" name="phone" onChange={handleChange} isInvalid={!!errors.phone} required /></InputGroup></Form.Group>
             <Form.Group className="mb-3"><Form.Label>Mot de passe *</Form.Label><Form.Control type="password" name="password" onChange={handleChange} isInvalid={!!errors.password} required /></Form.Group>

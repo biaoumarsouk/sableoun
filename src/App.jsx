@@ -32,6 +32,8 @@ import MessageDetailPage from './pages/dashboard/MessageDetailPage';
 import AfficheEditPage from './pages/dashboard/AfficheEditPage';
 import ProfilePage from './pages/dashboard/ProfilePage';
 import SubscriptionPage from './pages/dashboard/SubscriptionPage';
+import OrdersPage from './pages/dashboard/OrdersPage';
+import OrderDetailPage from './pages/dashboard/OrderDetailPage';
 
 // --- Composants & Outils ---
 import Header from './components/Header';
@@ -114,6 +116,8 @@ function MainContent() {
             <Route path="affiches/modifier/:afficheId" element={<AfficheEditPage />} />
             <Route path="profil" element={<ProfilePage />} />
             <Route path="abonnement" element={<SubscriptionPage />} />
+            <Route path="commandes" element={<OrdersPage />} />
+            <Route path="commandes/:orderId" element={<OrderDetailPage />} />
             <Route path="commandes" element={<div><h1>Mes Commandes</h1></div>} />
             <Route path="statistiques" element={<div><h1>Mes Statistiques</h1></div>} />
             <Route path="profil" element={<div><h1>Mon Profil</h1></div>} />
